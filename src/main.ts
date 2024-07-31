@@ -1,22 +1,24 @@
 import { invoke } from "@tauri-apps/api/tauri";
+import { appWindow } from "@tauri-apps/api/window";
+import { listen } from '@tauri-apps/api/event';
 
-let greetInputEl: HTMLInputElement | null;
-let greetMsgEl: HTMLElement | null;
-
-async function greet() {
-  if (greetMsgEl && greetInputEl) {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    greetMsgEl.textContent = await invoke("greet", {
-      name: greetInputEl.value,
-    });
-  }
+async function getKey(span: HTMLSpanElement | null) {
+	let key = await invoke("get_product_key").then((message)=>{
+		console.log(message)
+		return message as string
+	});
+	if (span){
+		span.innerText = key
+	}
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document.querySelector("#greet-form")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    greet();
-  });
+	let span = document.getElementById("span");
+	getKey(span)
+	listen('tauri://blur', () => {
+		appWindow.close();
+	});
+});
+document.addEventListener('contextmenu', (e) => {
+	e.preventDefault();
 });
