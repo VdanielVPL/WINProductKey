@@ -13,12 +13,20 @@ async function getKey(span: HTMLSpanElement | null) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-	let span = document.getElementById("span");
-	getKey(span)
-	listen('tauri://blur', () => {
-		appWindow.close();
-	});
+	let container = document.getElementById('container')
+	if(container){
+		container.style.opacity = '1'
+		let span = document.getElementById("span");
+		getKey(span)
+		listen('tauri://blur', () => {
+			container.style.opacity = '0'
+			setTimeout(() => {
+				appWindow.close();
+			}, 400);
+		});
+	}
 });
+
 document.addEventListener('contextmenu', (e) => {
 	e.preventDefault();
 });
