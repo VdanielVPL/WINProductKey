@@ -42,3 +42,14 @@ body{
 #title>span{
   text-align: center;
 }
+#footer{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -25px;
+  width: 100%;
+  color: rgb(122, 122, 122);
+  user-select: none;
+  font-size: small;
+}
