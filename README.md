@@ -1,6 +1,6 @@
 # WINProductKey
 
-This application is a simple tool built with Rust and Tauri to retrieve the Windows product key from the system registry. It uses Tauri to provide a minimal web-based interface and Rust for accessing and processing the registry data.
+This application is a simple tool built with Rust and Tauri to retrieve the Windows product key from the system registry. The `.exe` file provided is compiled to work on Windows 7, 10, and 11. **Please note that this method of retrieving the product key generally works from Windows 7 onwards, specifically for Pro and Home versions**. It uses Tauri to provide a minimal web-based interface and Rust for accessing and processing the registry data.
 
 ## Features
 
