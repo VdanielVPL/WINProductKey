@@ -39,7 +39,7 @@ fn get_key() -> io::Result<String>{
         // let data = raw_product_key.to_string();
         let data = raw_product_key.bytes;
         let key = convert_to_key(data);
-        return Ok(key);
+        Ok(key)
     }else{
         Err(io::Error::new(io::ErrorKind::Other, "Error"))
     }
@@ -47,15 +47,12 @@ fn get_key() -> io::Result<String>{
 
 #[tauri::command]
 fn get_product_key() -> Result<String, String> {
-    match get_key() {
-        Ok(key) => Ok(key),
-        Err(err) => Err(format!("Error: {}", err)),
-    }
+    get_key().map_err(|e| format!("Error: {}", e))
 }
 
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![get_product_key])
         .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .expect("Error while running tauri application");
 }
