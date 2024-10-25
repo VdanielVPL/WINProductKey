@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "winproductkey",
-    "version": "0.2.2"
+    "version": "0.3.0"
   },
   "tauri": {
     "allowlist": {
@@ -19,6 +19,11 @@
       },
       "window": {
         "close": true
+      },
+      "clipboard": {
+        "all": false,
+        "readText": false,
+        "writeText": true
       }
     },
     "windows": [

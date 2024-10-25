@@ -1,6 +1,6 @@
 [package]
 name = "winproductkey"
-version = "0.2.2"
+version = "0.3.0"
 description = "A Tauri App"
 authors = ["VdanielVPL"]
 edition = "2021"
@@ -11,7 +11,7 @@ edition = "2021"
 tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1", features = [ "window-close", "shell-open"] }
+tauri = { version = "1", features = [ "clipboard-write-text", "window-close", "shell-open"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 winreg = "0.52"
@@ -19,3 +19,12 @@ winreg = "0.52"
 [features]
 # This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+opt-level = "s"
+debug-assertions = false
+panic = "abort"
+codegen-units = 1
+strip = true
+lto = "fat"
+debug = false
