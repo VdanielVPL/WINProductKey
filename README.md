@@ -8,7 +8,30 @@ This application is a simple tool built with Rust and Tauri to retrieve the Wind
 - UI using Tauri's WebView.
 - Lightweight and fast.
 
-## Prerequisites
+## Downloading the Executable
+
+If you do not wish to build the application yourself, you can download the pre-built executable directly from the [Releases](https://github.com/VdanielVPL/WINProductKey/releases) section of the GitHub repository.
+
+1. Navigate to the [Releases](https://github.com/VdanielVPL/WINProductKey/releases) page.
+2. Download the latest version of the executable (`.exe`) file.
+3. Run the downloaded executable to retrieve your Windows product key.
+
+## Usage
+
+When you run the application, it will display a simple UI that shows you your product key.
+
+## How It Works
+
+This program reads the Windows product key from the registry by accessing the following registry path:
+
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\DigitalProductId
+```
+
+The key is stored in a binary format, which the Rust backend decodes into a readable product key.
+
+## Building
+### Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
@@ -19,7 +42,7 @@ Before you begin, ensure you have met the following requirements:
   bun add -D @tauri-apps/cli
   ```
 
-## Installation
+### Installation
 
 ### 1. Clone the repository
 
@@ -49,28 +72,6 @@ bunx tauri dev
 ### 4. Run the application (if release version)
 
 in `./src-tauri/target/release` double click on `.exe` file
-
-## Downloading the Executable
-
-If you do not wish to build the application yourself, you can download the pre-built executable directly from the [Releases](https://github.com/VdanielVPL/WINProductKey/releases) section of the GitHub repository.
-
-1. Navigate to the [Releases](https://github.com/VdanielVPL/WINProductKey/releases) page.
-2. Download the latest version of the executable (`.exe`) file.
-3. Run the downloaded executable to retrieve your Windows product key.
-
-## Usage
-
-When you run the application, it will display a simple UI that shows you your product key.
-
-## How It Works
-
-This program reads the Windows product key from the registry by accessing the following registry path:
-
-```
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\DigitalProductId
-```
-
-The key is stored in a binary format, which the Rust backend decodes into a readable product key.
 
 ### Key Files
 
