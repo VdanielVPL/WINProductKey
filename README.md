@@ -7,7 +7,7 @@ This application is a simple tool built with Rust and Tauri to retrieve the Wind
 
 [![Downloads](https://img.shields.io/github/downloads/vdanielvpl/winproductkey/total.svg)](https://github.com/vdanielvpl/winproductkey/releases)
 [![GitHub License](https://img.shields.io/github/license/vdanielvpl/winproductkey)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-![Current version](https://img.shields.io/github/v/release/vdanielvpl/winproductkey?label=version)
+[![Current version](https://img.shields.io/github/v/release/vdanielvpl/winproductkey?label=version)](https://github.com/vdanielvpl/winproductkey/releases)
 
 ## Features
 
