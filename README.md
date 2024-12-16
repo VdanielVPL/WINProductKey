@@ -6,10 +6,10 @@
 This application is a simple tool built with Rust and Tauri to retrieve the Windows product key from the system registry. The `.exe` file provided is compiled to work on Windows 7, 10, and 11. **Please note that this method of retrieving the product key generally works from Windows 7 onwards, specifically for Pro and Home versions**. It uses Tauri to provide a minimal web-based interface and Rust for accessing and processing the registry data.
 
 <div align="center">
-
-[![Downloads](https://img.shields.io/github/downloads/vdanielvpl/winproductkey/total.svg)](https://github.com/vdanielvpl/winproductkey/releases)
-[![GitHub License](https://img.shields.io/github/license/vdanielvpl/winproductkey)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Current version](https://img.shields.io/github/v/release/vdanielvpl/winproductkey?label=version)](https://github.com/vdanielvpl/winproductkey/releases)
+  
+  [![Downloads](https://img.shields.io/github/downloads/vdanielvpl/winproductkey/total.svg?style=for-the-badge&color=orange)](https://github.com/vdanielvpl/winproductkey/releases)
+  [![GitHub License](https://img.shields.io/github/license/vdanielvpl/winproductkey?style=for-the-badge&color=orange)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+  [![Current version](https://img.shields.io/github/v/release/vdanielvpl/winproductkey?label=version&style=for-the-badge&color=orange)](https://github.com/vdanielvpl/winproductkey/releases)
 
 </div>
 
